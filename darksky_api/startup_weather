@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+source $TERMSTART_DIR/includes/print.bash
+source $TERMSTART_DIR/includes/color.bash
+source $TERMSTART_DIR/includes/json_parse.bash
+source $TERMSTART_DIR/darksky_api/create_credentials.bash
+if [[ ! -f $TERMSTART_DIR/darksky_api/credentials ]]; then
+	createCredentialsDarkSky
+fi
+source $TERMSTART_DIR/darksky_api/credentials
+
+textColor=183
+borderColor=214
+
+weatherApi=`curl -s https://api.darksky.net/forecast/$APIDARKSKY_KEY/52.370216,4.895168?units=si`
+
+currently=$(json_property_brackets $weatherApi "currently")
+hourly=$(json_property_brackets $weatherApi "hourly")
+currSummary=$(json_property_dquote $currently "summary")
+currTemp=$(json_property $currently "temperature")
+hourSummary=$(json_property_dquote $hourly "summary")
+
+putColorFg $borderColor; putchar '╔'; putchar_n '═' 78; putchar '╗'; putchar '\n'
+putColorFg $borderColor; putchar '║'; putColorFg $textColor; putstr_max " Current temp:" 20; putstr_max "$currTemp" 58; putColorFg $borderColor; putchar '║'; putchar '\n'
+putColorFg $borderColor; putchar '║'; putColorFg $textColor; putstr_max " Current weather:" 20; putstr_max "$currSummary" 58; putColorFg $borderColor; putchar '║'; putchar '\n'
+putColorFg $borderColor; putchar '╠'; putchar_n '═' 78; putchar '╣'; putchar '\n'
+putColorFg $borderColor; putchar '║'; putColorFg $textColor; putstr_max " Daily forecast:" 20; putstr_max "$hourSummary" 58; putColorFg $borderColor; putchar '║'; putchar '\n'
+putColorFg $borderColor; putchar '╚'; putchar_n '═' 78; putchar '╝'; putchar '\n'

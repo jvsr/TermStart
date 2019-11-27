@@ -1,0 +1,10 @@
+#!/bin/bash
+
+clear
+
+export TERMSTART_DIR="$HOME/TermStart"
+
+$TERMSTART_DIR/startup/startup_header
+$TERMSTART_DIR/startup/startup_date
+$TERMSTART_DIR/darksky_api/startup_weather
+$TERMSTART_DIR/42_api/show_coalition_points
