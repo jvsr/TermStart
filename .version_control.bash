@@ -3,7 +3,7 @@
 export TERMSTART_DIR="$HOME/TermStart"
 
 masterHash=$(git rev-parse "master")
-originHash=$(git rev-parse "origin/version-control")
+originHash=$(git rev-parse "origin/master")
 
 if [[ "$masterHash" != "$originHash" ]]; then
 	while true; do
