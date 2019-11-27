@@ -3,6 +3,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+source $TERMSTART_DIR/config/color.conf
+
 source $TERMSTART_DIR/includes/print.bash
 source $TERMSTART_DIR/includes/color.bash
 source $TERMSTART_DIR/includes/json_parse.bash
@@ -11,9 +13,6 @@ if [[ ! -f $TERMSTART_DIR/darksky_api/credentials ]]; then
 	createCredentialsDarkSky
 fi
 source $TERMSTART_DIR/darksky_api/credentials
-
-textColor=183
-borderColor=214
 
 weatherApi=`curl -s https://api.darksky.net/forecast/$APIDARKSKY_KEY/52.370216,4.895168?units=si`
 
