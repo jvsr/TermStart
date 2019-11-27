@@ -4,6 +4,8 @@ clear
 
 export TERMSTART_DIR="$HOME/TermStart"
 
+source $TERMSTART_DIR/.version_control.bash
+
 $TERMSTART_DIR/startup/startup_header
 $TERMSTART_DIR/startup/startup_date
 $TERMSTART_DIR/darksky_api/startup_weather
