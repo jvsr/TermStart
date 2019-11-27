@@ -1,6 +1,14 @@
 # TermStart
 A module based info screen for the startup of your terminal
 
+# Features
+### Modules
+* Current Date
+* Current Weather
+* Codam Coalition Scores
+### Other
+* Version Control
+
 # Prerequisites
 ### Weather module
 * DarkSky API Key
