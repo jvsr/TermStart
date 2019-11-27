@@ -11,7 +11,7 @@ A module based info screen for the startup of your terminal
 
 # Prerequisites
 ### Weather module
-* DarkSky API Key
+* DarkSky API Key -- [Link](https://darksky.net/)
 
 ### Codam Coalition Score module
 * 42 API Key
