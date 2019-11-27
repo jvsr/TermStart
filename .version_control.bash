@@ -2,6 +2,7 @@
 
 export TERMSTART_DIR="$HOME/TermStart"
 
+git fetch --quiet
 masterHash=$(git rev-parse "master")
 originHash=$(git rev-parse "origin/master")
 
