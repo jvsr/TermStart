@@ -1,8 +1,8 @@
 #!/bin/bash
 
-git fetch origin master --quiet
-masterHash=$(git rev-parse "master")
-originHash=$(git rev-parse "origin/master")
+git  -C $TERMSTART_DIR fetch origin master --quiet
+masterHash=$(git -C $TERMSTART_DIR rev-parse "master")
+originHash=$(git -C $TERMSTART_DIR rev-parse "origin/master")
 
 if [[ "$masterHash" != "$originHash" ]]; then
 	while true; do
