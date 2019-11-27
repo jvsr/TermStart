@@ -9,14 +9,18 @@ if [[ "$masterHash" != "$originHash" ]]; then
 	while true; do
 		read -p "New update available. Would you like to update? (yes/no): "
 		if [[ ${REPLY} == "yes" ]]; then
-			git -C $TERMSTART_DIR pull master --quiet
+			curBranch=$(git branch -C $TERMSTART_DIR | grep \* | cut -d ' ' -f2)
+			if [[ $curBranch == "master" ]]; then
+				git -C $TERMSTART_DIR pull --quiet
+			else
+				echo "Please switch to the master branch first before updating."
+			fi
+			unset curBranch
 			break ;
 		elif [[ ${REPLY} == "no" ]]; then
 			break ;
 		fi
 	done
-else
-	echo "$masterHash | $originHash"
 fi
 
 clear
