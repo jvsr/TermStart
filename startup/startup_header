@@ -3,6 +3,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+source $TERMSTART_DIR/config/color.conf
+
 source $TERMSTART_DIR/includes/print.bash
 source $TERMSTART_DIR/includes/color.bash
 
@@ -14,7 +16,7 @@ declare -a header=(
 "╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗"
 " ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝")
 
-putColorFg 183
+putColorFg $textColor
 
 counter=0;
 while [[ counter -lt 6 ]]; do
