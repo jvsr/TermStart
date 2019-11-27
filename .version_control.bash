@@ -10,7 +10,7 @@ if [[ "$masterHash" != "$originHash" ]]; then
 	while true; do
 		read -p "New update available. Would you like to update? (yes/no): "
 		if [[ ${REPLY} == "yes" ]]; then
-			curBranch=$(git branch -C $TERMSTART_DIR | grep \* | cut -d ' ' -f2)
+			curBranch=$(git -C $TERMSTART_DIR branch | grep \* | cut -d ' ' -f2)
 			if [[ $curBranch == "master" ]]; then
 				git -C $TERMSTART_DIR pull --quiet
 			else
@@ -23,8 +23,6 @@ if [[ "$masterHash" != "$originHash" ]]; then
 		fi
 	done
 fi
-
-clear
 
 unset masterHash
 unset originHash
