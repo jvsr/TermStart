@@ -46,7 +46,7 @@ putcharFrame () {
 }
 
 putColorFg $borderColor; putchar '╔'; putchar_n '═' 11; putchar '╦'; putchar_n '═' 15; putchar '╦'; putchar_n '═' 15; putchar '╦'; putchar_n '═' 34; putchar '╗'; putchar '\n'
-putchar '║'; putstr_center "COALITION" 11; putchar '║'; putstr_center "OLD" 15; putchar '║'; putstr_center "NEW" 15; putchar '║'; putstr_center "TOTAL" 34; putstr "║\n"
+putchar '║'; putColorFg $textColor; putstr_center "COALITION" 11; putcharFrame '║'; putColorFg $textColor; putstr_center "OLD" 15; putcharFrame '║'; putColorFg $textColor; putstr_center "NEW" 15; putcharFrame '║'; putColorFg $textColor; putstr_center "TOTAL" 34; putColorFg $borderColor; putstr "║\n"
 putchar '╠'; putchar_n '═' 11; putchar '╬'; putchar_n '═' 15; putchar '╬'; putchar_n '═' 15; putchar '╬'; putchar_n '═' 34; putstr "╣\n"
 putchar '║'; putColorFg $pyxisColor; putstr_center "Pyxis" 11; putcharFrame '║'; putColorFg $pyxisColor; putchar_n ' ' 5; putstr_max $pyxisPoints 10; putcharFrame '║'; putColorFg $pyxisColor; putchar_n ' ' 5; putstr_max $pyxisNewPoints 10; putcharFrame '║'; putColorFg $pyxisColor; putstr_center $pyxisTotal 34; putColorFg $borderColor; putstr "║\n"
 putchar '║'; putColorFg $cetusColor; putstr_center "Cetus" 11; putcharFrame '║'; putColorFg $cetusColor; putchar_n ' ' 5; putstr_max $cetusPoints 10; putcharFrame '║'; putColorFg $cetusColor; putchar_n ' ' 5; putstr_max $cetusNewPoints 10; putcharFrame '║'; putColorFg $cetusColor; putstr_center $cetusTotal 34; putColorFg $borderColor; putstr "║\n"
