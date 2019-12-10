@@ -18,7 +18,7 @@ A module based info screen for the startup of your terminal
 
 # Installation
 1) `git clone` the repo in the home directory with the default name
-2) Add `$HOME/TermStart/startup/startup` to your .zshrc, .bashrc or other file that executes on terminal startup
+2) Add `$HOME/TermStart/TermStart.bash` to your .zshrc, .bashrc or other file that executes on terminal startup
 3) Restart the terminal and follow the instructions
 
 
