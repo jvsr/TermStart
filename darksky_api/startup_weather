@@ -9,11 +9,11 @@ source $TERMSTART_DIR/includes/print.bash
 source $TERMSTART_DIR/includes/color.bash
 source $TERMSTART_DIR/includes/json_parse.bash
 source $TERMSTART_DIR/includes/geolocation.bash
-source $TERMSTART_DIR/darksky_api/create_credentials.bash
-if [[ ! -f $TERMSTART_DIR/darksky_api/credentials ]]; then
+if [[ ! -f $TERMSTART_DIR/credentials/DarkSky.cred ]]; then
+	source $TERMSTART_DIR/credentials/create.bash
 	createCredentialsDarkSky
 fi
-source $TERMSTART_DIR/darksky_api/credentials
+source $TERMSTART_DIR/credentials/DarkSky.cred
 
 init_geolocation
 curLon=$(geo_get_longitude)

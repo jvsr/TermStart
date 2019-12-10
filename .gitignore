@@ -1,3 +1,2 @@
-# Untracked credential files
-42_api/credentials
-darksky_api/credentials
+# Untracked credentials
+*.cred

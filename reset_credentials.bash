@@ -2,8 +2,7 @@
 
 export TERMSTART_DIR="$HOME/TermStart"
 
-source $TERMSTART_DIR/42_api/create_credentials.bash
-source $TERMSTART_DIR/darksky_api/create_credentials.bash
+source $TERMSTART_DIR/credentials/create.bash
 
-resetCredentials42
+resetCredentialsFT
 resetCredentialsDarkSky

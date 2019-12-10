@@ -1,11 +1,11 @@
 #!/bin/bash
 
 source $TERMSTART_DIR/includes/json_parse.bash
-source $TERMSTART_DIR/darksky_api/create_credentials.bash
-if [[ ! -f $TERMSTART_DIR/darksky_api/credentials ]]; then
+if [[ ! -f $TERMSTART_DIR/credentials/DarkSky.cred ]]; then
+    source $TERMSTART_DIR/credentials/create.bash
 	createCredentialsDarkSky
 fi
-source $TERMSTART_DIR/darksky_api/credentials
+source $TERMSTART_DIR/credentials/DarkSky.cred
 
 init_geolocation () {
     ip=$( curl -s https://ipinfo.io/ip )
