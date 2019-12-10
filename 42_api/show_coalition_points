@@ -8,11 +8,11 @@ source $TERMSTART_DIR/config/color.conf
 source $TERMSTART_DIR/includes/print.bash
 source $TERMSTART_DIR/includes/color.bash
 source $TERMSTART_DIR/includes/json_parse.bash
-source $TERMSTART_DIR/42_api/create_credentials.bash
-if [[ ! -f $TERMSTART_DIR/42_api/credentials ]]; then
-	createCredentials42
+if [[ ! -f $TERMSTART_DIR/credentials/FT.cred ]]; then
+	source $TERMSTART_DIR/credentials/create.bash
+	createCredentialsFT
 fi
-source $TERMSTART_DIR/42_api/credentials
+source $TERMSTART_DIR/credentials/FT.cred
 
 apiToken=$(curl -sXPOST --data "grant_type=client_credentials&client_id=$API42_KEY&client_secret=$API42_SECRET" https://api.intra.42.fr/oauth/token)
 apiToken=$(json_property_dquote $apiToken "access_token")
