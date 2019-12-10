@@ -29,5 +29,5 @@ createCredentialsFT () {
 
 resetCredentialsFT () {
 	rm -rf $credentialStr > $TERMSTART_DIR/credentials/FT.cred
-	createCredentials42
+	createCredentialsFT
 }
