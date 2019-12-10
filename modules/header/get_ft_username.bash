@@ -1,5 +1,5 @@
 #!/bin/bash
 
-get_user_name42 () {
+get_ft_username () {
 
 }
