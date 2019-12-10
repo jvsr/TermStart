@@ -27,8 +27,8 @@ currTemp=$(json_property $currently "temperature")
 hourSummary=$(json_property_dquote $hourly "summary")
 
 putColorFg $borderColor; putchar '╔'; putchar_n '═' 78; putchar '╗'; putchar '\n'
-putColorFg $borderColor; putchar '║'; putColorFg $textColor; putstr_max " Current temp:" 20; putstr_max "$currTemp" 58; putColorFg $borderColor; putchar '║'; putchar '\n'
-putColorFg $borderColor; putchar '║'; putColorFg $textColor; putstr_max " Current weather:" 20; putstr_max "$currSummary" 58; putColorFg $borderColor; putchar '║'; putchar '\n'
-putColorFg $borderColor; putchar '╠'; putchar_n '═' 78; putchar '╣'; putchar '\n'
-putColorFg $borderColor; putchar '║'; putColorFg $textColor; putstr_max " Daily forecast:" 20; putstr_max "$hourSummary" 58; putColorFg $borderColor; putchar '║'; putchar '\n'
-putColorFg $borderColor; putchar '╚'; putchar_n '═' 78; putchar '╝'; putchar '\n'
+putchar '║'; putColorFg $textColor; putstr_max " Current temp:" 20; putstr_max "$currTemp" 58; putColorFg $borderColor; putchar '║'; putchar '\n'
+putchar '║'; putColorFg $textColor; putstr_max " Current weather:" 20; putstr_max "$currSummary" 58; putColorFg $borderColor; putchar '║'; putchar '\n'
+putchar '╠'; putchar_n '═' 78; putchar '╣'; putchar '\n'
+putchar '║'; putColorFg $textColor; putstr_max " Daily forecast:" 20; putstr_max "$hourSummary" 58; putColorFg $borderColor; putchar '║'; putchar '\n'
+putchar '╚'; putchar_n '═' 78; putchar '╝'; putchar '\n'
