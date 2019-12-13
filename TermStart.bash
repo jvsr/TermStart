@@ -6,6 +6,15 @@ export TERMSTART_DIR="$HOME/TermStart"
 
 source $TERMSTART_DIR/.version_control.bash
 
+# Checking if setup has been completed and creates module config file
+source $TERMSTART_DIR/config/setup.conf
+if [[ setupCompleted -eq 0 ]]; then
+	source $TERMSTART_DIR/setup/setup.bash
+	configureTermStart
+	echo "setupCompleted=1" > $TERMSTART_DIR/config/setup.conf
+	clear
+fi
+
 source $TERMSTART_DIR/config/module.conf
 
 if [[ headerModule -eq 1 ]]; then
