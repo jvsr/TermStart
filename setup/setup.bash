@@ -77,19 +77,3 @@ configureTermStart () {
 	requestFtApiKey
 	requestDarkSkyApiKey
 }
-
-
-# #!/bin/bash
-
-# # List of available modules and mode
-# # 0 = off
-# # 1 = on
-
-# headerModule=1
-# dateModule=1
-
-# # Dark Sky API dependent
-# weatherModule=1
-
-# # FT API dependent
-# ftCoalitionPointsModule=1
